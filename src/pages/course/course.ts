@@ -11,4 +11,10 @@ export class CoursePage {
 
   }
 
+  navigate(page: string, course: string): void {
+      this.navCtrl.push(page, {
+        course: course
+      });
+  }
+
 }

@@ -1,0 +1,16 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ course }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ul class="levels">
+        <li *ngFor="let level of levels">
+            {{ level.id }}
+        </li>
+    </ul>
+</ion-content>

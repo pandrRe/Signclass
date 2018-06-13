@@ -6,6 +6,35 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="card-background-page">
 
+    <ion-card text-center>
+        <ion-card-content>
+            <h1>Básico</h1>
+            <p class="subtitle">
+                Aprenda expressões do dia-a-dia no módulo básico de Libras.
+            </p>
+            <button ion-button (click)="navigate('levels', 'Básico')">Começar</button>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card text-center>
+        <ion-card-content>
+            <h1>Intermediário</h1>
+            <p class="subtitle">
+                Desenvolva seus conhecimentos no módulo intermediário de Libras.
+            </p>
+            <button ion-button (click)="navigate('levels', 'Intermediário')">Começar</button>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card text-center>
+        <ion-card-content>
+            <h1>Avançado</h1>
+            <p class="subtitle">
+                Consolide seu dominio da linguagem no módulo avançado de Libras.
+            </p>
+            <button ion-button (click)="navigate('levels', 'Avançado')">Começar</button>
+        </ion-card-content>
+    </ion-card>
 </ion-content>
