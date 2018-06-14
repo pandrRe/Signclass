@@ -10,7 +10,9 @@
 <ion-content padding>
     <ul class="levels">
         <li *ngFor="let level of levels">
-            {{ level.id }}
+            <button class="btn-lvls" ion-button block round (click)="openPop($event, level)">
+                Nível {{ level.id }}
+            </button>
         </li>
     </ul>
 </ion-content>

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+import { LevelsPage } from '../levels/levels';
+
 @Component({
   selector: 'page-course',
   templateUrl: 'course.html'
@@ -11,8 +13,8 @@ export class CoursePage {
 
   }
 
-  navigate(page: string, course: string): void {
-      this.navCtrl.push(page, {
+  navigate(course): void {
+      this.navCtrl.push(LevelsPage, {
         course: course
       });
   }
