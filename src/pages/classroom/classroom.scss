@@ -1,0 +1,77 @@
+page-classroom {
+}
+
+.room
+{
+    background-color: #eeecec;
+}
+
+.imgshow
+{
+    border-radius: 50%;
+}
+
+ion-footer
+{
+    padding: 15px;
+    box-shadow: 0px !important;
+}
+
+.answers
+{
+    list-style-type: none;
+    padding: 0px;
+}
+
+.selected
+{
+    background-color: purple;
+}
+
+.wrong
+{
+    background-color: red !important;
+}
+
+.correct
+{
+    background-color: greenyellow !important;
+}
+
+.answers li button[disabled]
+{
+    opacity: 0.75;
+    background-color: rgb(197, 197, 197);
+}
+
+.answers li button
+{
+    box-shadow: none;
+    border-radius: 20px;
+}
+
+.hidden
+{
+    display: none;
+}
+
+button.back
+{
+    display: inline;
+}
+
+ion-navbar ion-title
+{
+    display: inline !important;
+}
+
+.pics
+{
+    list-style-type: none;
+    padding: 0px;
+}
+
+.pics li
+{
+    display: inline;
+}

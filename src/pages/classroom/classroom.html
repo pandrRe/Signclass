@@ -1,0 +1,55 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title class="bar">Sala de Aula</ion-title>
+    <ion-buttons left>
+        <button class="back">Voltar</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content text-center padding class="room">
+    <div *ngIf="questions && questions.length > 0">
+        <h2>{{ questions[0].prompt }}</h2>
+
+        <ul class="pics">
+            <li *ngFor="let pic of questions[0].assets">
+                <img src="{{ pic }}" class="imgshow"
+                [style.height]='displaySize'
+                [style.width]='displaySize'>
+            </li>
+        </ul>
+    
+        <ion-list>
+            <ul class="answers">
+                <li *ngFor="let answer of questions[0].answers">
+                    <button ion-button block
+                    (click)="selectAnswer(answer)"
+                    [class.selected]="answer === selectedAnswer"
+                    [class.wrong]="answer === wrongAnswer"
+                    [class.correct]="answer === rightAnswer"
+                    [disabled]="rightAnswer != null">
+                        {{ answer }}
+                    </button>
+                </li>
+            </ul>
+        </ion-list>
+
+        <div class="feedback"
+        [class.hidden]="rightAnswer == null">
+            {{ feedbackText }}
+        </div>
+
+        <ion-footer no-border>
+            <button ion-button block footer
+            (click)="submitFunction()"
+            [disabled]="noneSelected()">
+                {{ submitText }}
+            </button>
+        </ion-footer>
+
+    </div>
+
+</ion-content>

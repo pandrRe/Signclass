@@ -1,0 +1,5 @@
+[
+    {"prompt": "O que o gesto a seguir representa?", "answers": ["A", "S", "P", "D"], "answerKey": "S", "assets": ["assets/imgs/libras-cards/libras_19.png"], "type": "selection"},
+    {"prompt": "O que o gesto a seguir representa?", "answers": ["E", "M", "O", "Z"], "answerKey": "O", "assets": ["assets/imgs/libras-cards/libras_15.png"], "type": "selection"},
+    {"prompt": "O que a combinação de gestos a seguir representa?", "answers": ["L.O.L", "M.G.M", "D.I.A", "S.O.S"], "answerKey": "S.O.S", "assets": ["assets/imgs/libras-cards/libras_19.png", "assets/imgs/libras-cards/libras_15.png", "assets/imgs/libras-cards/libras_19.png"], "type": "selection"}
+]

@@ -1,7 +1,7 @@
 export class Question {
     prompt: string;
     answers: string[];
-    answer_key: number;
+    answerKey: string;
     assets: string[];
     type: string;
 }
