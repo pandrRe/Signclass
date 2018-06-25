@@ -22,14 +22,12 @@ export class LevelsPage {
     ) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LevelsPage');
     this.course = this.navParams.get('course');
     if (this.course == 'Básico') {this.content.courseId = 1;}
     else if (this.course == 'Intermediário') {this.content.courseId = 2;}
     else if (this.course == 'Avançado') {this.content.courseId = 3;}
 
     this.getLevels();
-    console.log(this.levels);
   }
 
   openPop(ev, level: Level): void {

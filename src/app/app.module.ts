@@ -15,7 +15,6 @@ import { ClassroomPage } from '../pages/classroom/classroom';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ContentProvider } from '../providers/content/content';
-import { PerformanceProvider } from '../providers/performance/performance';
 
 @NgModule({
   declarations: [
@@ -48,8 +47,7 @@ import { PerformanceProvider } from '../providers/performance/performance';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ContentProvider,
-    PerformanceProvider
+    ContentProvider
   ]
 })
 export class AppModule {}

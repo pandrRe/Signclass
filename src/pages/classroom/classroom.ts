@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { ContentProvider } from '../../providers/content/content';
 
 import { Question } from '../../app/question-class';
@@ -21,17 +21,17 @@ export class ClassroomPage {
   submitText: string;
   submitFunction;
 
-  errorCount: number;
-  triesCount: number;
+  errorCount: number = 0;
+  triesCount: number = 0;
 
   acerto: boolean;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private content: ContentProvider) {
-
-  }
+  constructor(
+      public navCtrl: NavController, public navParams: NavParams, private content: ContentProvider,
+      private modal: ModalController
+    ) {}
 
   ionViewCanEnter(): void {
-    console.log('ionViewDidLoad ClassroomPage');
     this.currentLevel = this.navParams.get('levelId');
     this.getQuestions();
     this.cleanValues();
@@ -65,6 +65,7 @@ export class ClassroomPage {
         this.wrongAnswer = this.selectedAnswer
         this.errorCount += 1;
     }
+    this.triesCount += 1;
     this.submitText = "Próximo";
     this.submitFunction = this.nextQuestion;
     
@@ -73,12 +74,18 @@ export class ClassroomPage {
   nextQuestion(): void {
     this.acerto? null : this.questions.push(this.questions[0]);
     this.questions.length == 1? this.finishClass() : this.questions.shift();
-    this.triesCount += 1;
     this.cleanValues();
   }
 
   finishClass(): void {
-    this.navCtrl.pop();
+    const Data = {
+        tries: this.triesCount,
+        errors: this.errorCount,
+        course: this.content.courseId,
+        level: this.currentLevel
+    }
+    const ClassResults = this.modal.create('PostLevelPage', {data: Data});
+    ClassResults.present().then( () => this.navCtrl.pop() );
   }
 
   cleanValues(): void {

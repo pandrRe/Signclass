@@ -28,10 +28,10 @@ export class ContentProvider {
 	
   public getLevel(level: number): Observable<Question[]> {
     const url = `${this.contentUrl}course${this.courseId}-levels/level${level}.json`;
-      return this.http.get<Question[]>(url)
-      .pipe(
-        catchError(this.handleError('Obter questões', []))
-      );
+    return this.http.get<Question[]>(url)
+        .pipe(
+            catchError(this.handleError('Obter questões', []))
+        );
   }
 	
   private handleError<T> (operation: string, result: T) {

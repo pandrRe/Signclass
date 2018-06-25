@@ -2,9 +2,6 @@
 
   <ion-navbar>
     <ion-title class="bar">Sala de Aula</ion-title>
-    <ion-buttons left>
-        <button class="back">Voltar</button>
-    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -42,13 +39,11 @@
             {{ feedbackText }}
         </div>
 
-        <ion-footer no-border>
-            <button ion-button block footer
-            (click)="submitFunction()"
-            [disabled]="noneSelected()">
-                {{ submitText }}
-            </button>
-        </ion-footer>
+        <button ion-button block
+        (click)="submitFunction()"
+        [disabled]="noneSelected()">
+            {{ submitText }}
+        </button>
 
     </div>
 
