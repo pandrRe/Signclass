@@ -14,9 +14,7 @@ export class ContentProvider {
 	public courseId: number;
 	public levelId: number;
 
-  constructor(public http: HttpClient) {
-    console.log('Hello ContentProvider Provider');
-  }
+  constructor(public http: HttpClient, private storage: Storage) {}
 
   public getCourse(): Observable<Level[]> {
 	const url = `${this.contentUrl}course${this.courseId}.json`;

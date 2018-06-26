@@ -1,7 +1,7 @@
 <ion-content *ngIf="info" padding text-center>
     <h2>Parabéns! Você concluiu o nível {{info.level}}!</h2>
     <p text-left>
-        Você precisou de {{info.tries}} tentativas para resolver {{info.tries - info.errors}}!<br />
+        Você precisou de {{info.tries}} tentativas para resolver {{info.tries - info.errors}} questões!<br />
         Continue melhorando!
     </p>
     <button ion-button (click)="goBack()">Voltar</button>

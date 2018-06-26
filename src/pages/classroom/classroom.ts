@@ -3,6 +3,7 @@ import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { ContentProvider } from '../../providers/content/content';
 
 import { Question } from '../../app/question-class';
+import { PerformanceMap } from '../../app/performance-class';
 
 @Component({
   selector: 'page-classroom',
@@ -78,7 +79,7 @@ export class ClassroomPage {
   }
 
   finishClass(): void {
-    const Data = {
+    const Data: PerformanceMap = {
         tries: this.triesCount,
         errors: this.errorCount,
         course: this.content.courseId,
