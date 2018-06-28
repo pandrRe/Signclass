@@ -43,6 +43,7 @@ export class ClassroomPage {
       .subscribe(questions => {
         this.questions = questions;
         questions.length == 0? this.navCtrl.pop() : null;
+        //TODO: Alerta de erro. Função exclusiva de saída?
       });
   }
 

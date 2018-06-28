@@ -14,10 +14,10 @@ export class ContentProvider {
 	public courseId: number;
 	public levelId: number;
 
-  constructor(public http: HttpClient, private storage: Storage) {}
+  constructor(public http: HttpClient) {}
 
-  public getCourse(): Observable<Level[]> {
-	const url = `${this.contentUrl}course${this.courseId}.json`;
+  public getCourse(courseId): Observable<Level[]> {
+	const url = `${this.contentUrl}course${courseId}.json`;
     return this.http.get<Level[]>(url)
         .pipe(
             catchError(this.handleError('Obter níveis', []))
@@ -29,6 +29,14 @@ export class ContentProvider {
     return this.http.get<Question[]>(url)
         .pipe(
             catchError(this.handleError('Obter questões', []))
+        );
+  }
+
+  public getInfo(): Observable<Object> {
+    const url = `${this.contentUrl}info.json`;
+    return this.http.get<Object>(url)
+        .pipe(
+            catchError(this.handleError('Obter informação', []))
         );
   }
 	

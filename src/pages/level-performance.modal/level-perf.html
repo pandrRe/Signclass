@@ -1,0 +1,31 @@
+<ion-header>
+        <ion-navbar>
+          <ion-title>
+            {{courseInfo.courseName}}
+          </ion-title>
+        </ion-navbar>
+</ion-header>
+
+<ion-content padding text-center>
+    <ion-list *ngIf="course">
+        <ion-list-header>
+            Níveis
+        </ion-list-header>
+        <ion-item *ngFor="let level of course">
+            Nível {{level.id}}
+            <div *ngIf="levelPerfs[level.id - 1] != null; else nullText">
+                <p>
+                    Nº de Questões: {{levelPerfs[level.id - 1].tries - levelPerfs[level.id - 1].errors}}<br />
+                    Tentativas: {{levelPerfs[level.id - 1].tries}}<br />
+                    Erros: {{levelPerfs[level.id - 1].errors}}
+                </p>
+            </div>
+            <ng-template #nullText>
+                <p>Não há dados registrados para este nível.</p>
+            </ng-template>
+        </ion-item>
+    </ion-list>
+
+    <button ion-button (click)="goBack()">Voltar</button>
+
+</ion-content>

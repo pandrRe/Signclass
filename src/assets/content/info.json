@@ -1,0 +1,17 @@
+[
+    {
+        "courseId": 1,
+        "courseName": "Básico",
+        "courseDesc": "Aprenda expressões do dia-a-dia no módulo básico de Libras."
+    },
+    {
+        "courseId": 2,
+        "courseName": "Intermediário",
+        "courseDesc": "Desenvolva seus conhecimentos no módulo intermediário de Libras."
+    },
+    {
+        "courseId": 3,
+        "courseName": "Avançado",
+        "courseDesc": "Consolide seu dominio da linguagem no módulo avançado de Libras."
+    }
+]

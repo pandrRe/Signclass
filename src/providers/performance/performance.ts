@@ -12,8 +12,7 @@ export class PerformanceProvider {
   public recordPerformance(data: PerformanceMap): void {
     const key = `course${data.course}-level${data.level}`;
     const dataString = JSON.stringify(data);
-    this.storage.set(key, dataString)
-        .then();
+    this.storage.set(key, dataString);
   }
 
   public getPerformance<PerformanceMap>(course: number, level: number): Promise<PerformanceMap> {

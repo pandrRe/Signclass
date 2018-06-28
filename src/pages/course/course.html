@@ -8,33 +8,17 @@
 
 <ion-content class="card-background-page">
 
-    <ion-card text-center>
-        <ion-card-content>
-            <h1>Básico</h1>
-            <p class="subtitle">
-                Aprenda expressões do dia-a-dia no módulo básico de Libras.
-            </p>
-            <button ion-button (click)="navigate('Básico')">Começar</button>
-        </ion-card-content>
-    </ion-card>
-
-    <ion-card text-center>
-        <ion-card-content>
-            <h1>Intermediário</h1>
-            <p class="subtitle">
-                Desenvolva seus conhecimentos no módulo intermediário de Libras.
-            </p>
-            <button ion-button (click)="navigate('Intermediário')">Começar</button>
-        </ion-card-content>
-    </ion-card>
-
-    <ion-card text-center>
-        <ion-card-content>
-            <h1>Avançado</h1>
-            <p class="subtitle">
-                Consolide seu dominio da linguagem no módulo avançado de Libras.
-            </p>
-            <button ion-button (click)="navigate('Avançado')">Começar</button>
-        </ion-card-content>
-    </ion-card>
+    <ul *ngIf="coursesInfo">
+        <li *ngFor="let course of coursesInfo">
+            <ion-card text-center>
+                <ion-card-content>
+                <h1>{{ course.courseName }}</h1>
+                <p class="subtitle">
+                    {{ course.courseDesc }}
+                </p>
+                <button ion-button (click)="navigate(course.courseId, course.courseName)">Começar</button>
+                </ion-card-content>
+            </ion-card>
+        </li>
+    </ul>
 </ion-content>

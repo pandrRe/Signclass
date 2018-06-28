@@ -23,9 +23,6 @@ export class LevelsPage {
 
   ionViewDidLoad() {
     this.course = this.navParams.get('course');
-    if (this.course == 'Básico') {this.content.courseId = 1;}
-    else if (this.course == 'Intermediário') {this.content.courseId = 2;}
-    else if (this.course == 'Avançado') {this.content.courseId = 3;}
 
     this.getLevels();
   }
@@ -38,7 +35,7 @@ export class LevelsPage {
   }
 
   getLevels(): void {
-    this.content.getCourse()
+    this.content.getCourse(this.content.courseId)
         .subscribe(levels => { this.levels = levels } );
   }
 
