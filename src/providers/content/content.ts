@@ -10,7 +10,7 @@ import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class ContentProvider {
-	contentUrl: string = 'assets/content/';
+	contentUrl: string = 'https://api-signclass.herokuapp.com/files/';
 	public courseId: number;
 	public levelId: number;
 
