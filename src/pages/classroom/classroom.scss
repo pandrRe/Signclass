@@ -1,11 +1,6 @@
 page-classroom {
 }
 
-.room
-{
-    background-color: #eeecec;
-}
-
 .imgshow
 {
     border-radius: 50%;
@@ -25,17 +20,24 @@ ion-footer
 
 .selected
 {
-    background-color: purple;
+    background-color: color($colors, red2);
+}
+
+.selected:hover
+{
+    background-color: color($colors, red2) !important;
 }
 
 .wrong
 {
     background-color: red !important;
+    opacity: 1 !important;
 }
 
 .correct
 {
     background-color: greenyellow !important;
+    opacity: 1 !important;
 }
 
 .answers li button[disabled]

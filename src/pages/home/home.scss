@@ -4,14 +4,22 @@ page-home {
 
 ion-card-header
 {
-    background-color: black;
+    background-color: color($colors, main);
     color: white !important;
 }
 
 ion-card-content
 {
     padding-top: 13px !important;
+    border: 0px;
 }
+
+.btn-help
+{
+    background-color: color($colors, main);
+}
+
+
 
 .media-btns
 {
